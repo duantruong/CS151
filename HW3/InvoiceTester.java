@@ -39,6 +39,7 @@ public class InvoiceTester
          {
             LineItem item = (LineItem) combo.getSelectedItem();
             invoice.addItem(item);
+            invoice.addQuantity();
          });
 
       // Put the combo box and the add button into a panel
