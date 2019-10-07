@@ -15,7 +15,7 @@ public String formatLineItem(LineItem item)
 {
    total += item.getPrice();
    return (String.format(
-         "%s: $%.2f\n",item.toString(),item.getPrice()));
+         "%s: x$%.2f\n",item.toString(),item.getPrice()));
 }
 
 public String formatFooter()
