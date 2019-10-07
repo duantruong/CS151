@@ -78,4 +78,13 @@ public class Invoice
 
    private ArrayList<LineItem> items;
    private ArrayList<ChangeListener> listeners;
+   public static int getQuantity() {
+	   return quantity;
+	   }
+   public void addQuantity() {
+	   quantity++;
+	   }
+   private LineItem item;
+   private double discount;
+   private static int quantity=1;
 }
