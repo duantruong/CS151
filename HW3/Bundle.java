@@ -38,4 +38,9 @@ public class Bundle implements LineItem
    }
 
    private ArrayList<LineItem> items;
+   public static int getQuantity() {return quantity;}
+   public void addQuantity(int quantity1) {quantity++;}
+   private LineItem item;
+   private double discount;
+   private static int quantity=1;
 }
