@@ -13,6 +13,8 @@ class car extends Thread{
             Thread.sleep(y);
         } catch (InterruptedException e){};
     }
+
+
 }
 public class AnimationTester
 {
@@ -48,24 +50,32 @@ public class AnimationTester
         car car2=new car();
         car car3=new car();
         car car4=new car();
+        Thread thread1=new Thread(car1);
+        Thread thread2=new Thread(car2);
+        Thread thread3=new Thread(car1);
+        Thread thread4=new Thread(car2);
 
-
-        final int DELAY = 10;
+        int DELAY = 10;
         // Milliseconds between timer ticks
         Timer t = new Timer(DELAY, event ->
         {
             shape.move();
-            car1.run(label,10);
+            car1.run(label,30);
 
         });
         t.start();
-        Timer t1 = new Timer(DELAY, event ->
+        thread1.start();
+
+        int DELAY1 = 50;
+        Timer t1 = new Timer(DELAY1, event ->
         {
             shape.move();
-            car2.run(label1,20);
+            car2.run(label1,30);
 
         });
         t1.start();
+        thread2.start();
+        int DELAY2 = 100;
         Timer t2 = new Timer(DELAY, event ->
         {
             shape.move();
@@ -73,13 +83,16 @@ public class AnimationTester
 
         });
         t2.start();
+        thread3.start();
+        int DELAY3 = 150;
         Timer t3 = new Timer(DELAY, event ->
         {
             shape.move();
-            car4.run(label3,100);
+            car4.run(label3,30);
 
         });
         t3.start();
+        thread4.start();
     }
 
     private static final int ICON_WIDTH = 400;
